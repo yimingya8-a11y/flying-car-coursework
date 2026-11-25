@@ -1,4 +1,6 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>飞行汽车课程作业</title><style>
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>小鹏汇天「陆地航母」飞行汽车安全分析</title><style>
 :root{--navy:#183b63;--blue:#285f91;--light:#eef4fa;--line:#d8e1ea;--text:#243447;--muted:#64748b;--paper:#fff;--soft:#f7f9fc;--green:#eaf5ef;--orange:#fff4e5;--red:#fbecec}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:76px}
 body{margin:0;background:#f2f5f8;color:var(--text);font:16px/1.8 "Microsoft YaHei","PingFang SC",Arial,sans-serif}
@@ -49,10 +51,247 @@ tr:nth-child(even) td{background:#fbfcfe}
 footer{max-width:1180px;margin:0 auto 35px;padding:18px 26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line)}
 @media(max-width:760px){.head{padding:25px 18px}h1{font-size:27px}.navinner{padding:8px 14px}main{padding:0 12px;margin-top:14px}section{padding:19px 16px}.grid,.grid.two{grid-template-columns:1fr}}
 @media print{body{background:#fff}nav{display:none}main{margin:0 auto;padding:0}section{box-shadow:none;break-inside:avoid}header{background:#fff;color:#111;border-bottom:2px solid #183b63}.kicker,.subtitle,.meta{color:#333}a{color:#111;text-decoration:underline}footer{margin-bottom:0}}
+</style></head><body>
+<header><div class="head"><div class="kicker">飞行汽车技术基础 · 课程作业</div>
+<h1>小鹏汇天「陆地航母」飞行汽车安全分析</h1><p class="subtitle">围绕系统组成、运行过程、危险源、故障模式、风险评价和安全措施开展分析。</p>
+<div class="meta"><span>研究对象：小鹏汇天「陆地航母」</span><span>飞行体型号：X3-F</span><span>日期：2026年11月</span><span>姓名：____________　学号：____________</span></div></div></header>
+<nav><div class="navinner"><a href="#purpose">分析对象</a><a href="#system">系统组成</a><a href="#operation">运行流程</a><a href="#hazards">危险识别</a><a href="#fmea">FMEA分析</a><a href="#matrix">风险矩阵</a><a href="#fta">故障树</a><a href="#controls">安全措施</a><a href="#cert">适航要求</a><a href="#conclusion">结论</a><a href="#refs">参考资料</a></div></nav>
+<main>
+<section id="purpose">
+<h2>一、分析对象与方法</h2>
+<p class="lead">本次作业以小鹏汇天「陆地航母」飞行体X3-F及其陆行体为对象，按照系统安全工程的思路，对产品结构、运行过程和关键接口进行分析，重点研究可能影响飞行安全、地面人员安全和设备安全的危险因素。</p>
+<p>分析方法包括系统组成分析、运行阶段分析、危险源识别、故障模式与影响分析（FMEA）、风险矩阵和故障树分析。由于产品的完整设计数据和故障统计数据没有公开，本次风险等级采用定性评分，主要用于比较不同危险的优先程度。</p>
+<div class="grid">
+<div class="card"><div class="metric">12项</div><div class="metric-label">主要危险场景</div><p>覆盖动力、电池、飞控、通信、结构、分合机构和运行环境。</p></div>
+<div class="card"><div class="metric">5×5</div><div class="metric-label">风险评价矩阵</div><p>按照严重度和发生可能性进行分级。</p></div>
+<div class="card"><div class="metric">全流程</div><div class="metric-label">分析范围</div><p>从道路运输、补能到飞行、回收和维修。</p></div>
+</div>
+</section>
 
-body{background:#f2f5f8}.landing{max-width:960px;margin:70px auto;padding:0 22px}.entry{background:#fff;border:1px solid var(--line);border-radius:12px;padding:25px;margin:18px 0;display:flex;justify-content:space-between;align-items:center;gap:20px}.entry h2{border:0;margin:0;padding:0}.entry p{color:var(--muted);margin:5px 0 0}.entry a{background:var(--navy);color:#fff;padding:10px 16px;border-radius:6px;white-space:nowrap}@media(max-width:600px){.entry{display:block}.entry a{display:inline-block;margin-top:15px}}</style></head><body>
-<header><div class="head"><div class="kicker">飞行汽车技术基础 · 课程作业</div><h1>小鹏汇天「陆地航母」<br>调研与安全分析</h1><p class="subtitle">两次课程作业，研究对象统一为陆地航母飞行汽车。</p><div class="meta"><span>研究对象：小鹏汇天「陆地航母」</span><span>型号：X3-F</span><span>2026年11月</span></div></div></header>
-<div class="landing">
-<div class="entry"><div><h2>第一次作业｜全方位调研与分析</h2><p>企业背景、产品结构、关键技术、技术可行性、应用场景、市场和竞品分析。</p></div><a href="./作业一/index.html">进入作业一</a></div>
-<div class="entry"><div><h2>第二次作业｜全方位安全分析</h2><p>系统组成、运行流程、危险源识别、FMEA、风险矩阵、故障树和安全措施。</p></div><a href="./作业二/index.html">进入作业二</a></div>
-</div><footer>飞行汽车技术基础课程作业</footer></body></html>
+<section id="system">
+<h2>二、系统组成与安全边界</h2>
+<p>「陆地航母」由陆行体、飞行体和自动分离结合机构组成。安全分析不能只看飞行体，还需要考虑地面运输、收纳、补能以及两个单元之间的接口。</p>
+<div class="diagram">
+<svg viewBox="0 0 900 255" role="img" aria-label="安全分析系统边界图">
+<rect x="12" y="18" width="250" height="165" rx="10" fill="#eaf1f7" stroke="#527da4" stroke-width="2"/>
+<text x="137" y="51" text-anchor="middle" font-size="20" fill="#183b63" font-weight="bold">陆行体</text>
+<text x="137" y="82" text-anchor="middle" font-size="14" fill="#344e68">车辆底盘 / 制动 / 转向</text>
+<text x="137" y="108" text-anchor="middle" font-size="14" fill="#344e68">储存舱 / 补能系统</text>
+<text x="137" y="134" text-anchor="middle" font-size="14" fill="#344e68">道路碰撞与运输安全</text>
+<rect x="325" y="18" width="250" height="165" rx="10" fill="#fff4e5" stroke="#c28a31" stroke-width="2"/>
+<text x="450" y="51" text-anchor="middle" font-size="20" fill="#75501b" font-weight="bold">接口系统</text>
+<text x="450" y="82" text-anchor="middle" font-size="14" fill="#6a573b">定位与自动对接</text>
+<text x="450" y="108" text-anchor="middle" font-size="14" fill="#6a573b">机械锁止与状态检测</text>
+<text x="450" y="134" text-anchor="middle" font-size="14" fill="#6a573b">电气 / 数据连接</text>
+<rect x="638" y="18" width="250" height="165" rx="10" fill="#eaf5ef" stroke="#4b9771" stroke-width="2"/>
+<text x="763" y="51" text-anchor="middle" font-size="20" fill="#245e43" font-weight="bold">飞行体 X3-F</text>
+<text x="763" y="82" text-anchor="middle" font-size="14" fill="#365c4a">旋翼 / 电机 / 电池</text>
+<text x="763" y="108" text-anchor="middle" font-size="14" fill="#365c4a">飞控 / 导航 / 通信</text>
+<text x="763" y="134" text-anchor="middle" font-size="14" fill="#365c4a">座舱 / 操纵 / 结构</text>
+<path d="M262 100 H325 M575 100 H638" stroke="#476986" stroke-width="3"/>
+<path d="M315 92 L325 100 L315 108 M628 92 L638 100 L628 108" stroke="#476986" stroke-width="3" fill="none"/>
+<rect x="12" y="207" width="876" height="34" rx="7" fill="#f0f5fa" stroke="#d8e1ea"/>
+<text x="450" y="229" text-anchor="middle" font-size="13" fill="#4d6278">外部条件：驾驶员与乘员 · 道路交通 · 起降场 · 天气 · 空域 · 维修人员 · 地面公众</text>
+</svg>
+</div>
+<div class="tablewrap"><table>
+<thead><tr><th>子系统</th><th>主要功能</th><th>重点安全问题</th></tr></thead>
+<tbody>
+<tr><td>陆行体</td><td>道路行驶、承载飞行体、储存和补能。</td><td>车辆碰撞、制动失效、飞行体固定不牢、充电故障。</td></tr>
+<tr><td>分离结合机构</td><td>完成飞行体与陆行体的定位、分离和结合。</td><td>锁止不到位、误动作、传感器错误、机构磨损。</td></tr>
+<tr><td>电池与高压系统</td><td>储存并向电推进系统提供电能。</td><td>热失控、绝缘下降、短路、电弧和高压触电。</td></tr>
+<tr><td>电推进系统</td><td>由电机和旋翼产生升力并控制姿态。</td><td>电机或电调故障、桨叶损伤、推力不一致。</td></tr>
+<tr><td>飞控与导航</td><td>感知状态、计算控制指令、规划和保持航迹。</td><td>软件错误、传感器异常、定位漂移、共因故障。</td></tr>
+<tr><td>通信系统</td><td>完成机内数据传输和必要的地面信息交互。</td><td>链路中断、干扰、数据错误和未授权访问。</td></tr>
+<tr><td>座舱与人机界面</td><td>为驾驶员和乘员提供操纵、显示和保护。</td><td>模式混淆、告警不清、操作失误和接管延误。</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="operation">
+<h2>三、运行流程与危险出现阶段</h2>
+<ol>
+<li><b>道路运输：</b>陆行体行驶，飞行体处于收纳状态，需要保证固定结构和后舱防护可靠。</li>
+<li><b>停车与补能：</b>车辆停放后进行电池补能和状态检查，重点防止过充、过热和高压误触。</li>
+<li><b>分离与展开：</b>自动分离机构完成解锁，飞行体展开机臂和旋翼，现场人员需要与旋翼保持安全距离。</li>
+<li><b>飞行前检查：</b>检查电池、动力、飞控、导航、通信、天气、载荷和起降区域。</li>
+<li><b>垂直起飞：</b>动力系统建立升力，飞控系统保持姿态，地面人员和障碍物应处于安全范围之外。</li>
+<li><b>低空飞行：</b>持续监测电量、姿态、位置、通信和环境，发生异常时按照预定程序处置。</li>
+<li><b>降落与收回：</b>确认降落区域安全，飞行体落地并停止旋翼，再完成收拢和自动结合。</li>
+<li><b>维修与检查：</b>对旋翼、结构、电池、高压连接和软件构型进行检查并记录。</li>
+</ol>
+</section>
+
+<section id="hazards">
+<h2>四、危险源识别</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>编号</th><th>危险源</th><th>可能原因</th><th>可能后果</th></tr></thead>
+<tbody>
+<tr><td>H1</td><td>多个推进单元失效</td><td>电机、电调或桨叶故障，供电异常。</td><td>推力不足、姿态失稳、迫降或坠落。</td></tr>
+<tr><td>H2</td><td>电池热失控</td><td>内部短路、过充、碰撞损伤或热管理故障。</td><td>起火、烟雾、动力中断和乘员伤害。</td></tr>
+<tr><td>H3</td><td>高压绝缘故障</td><td>线束破损、连接器松动、进水或绝缘老化。</td><td>电击、电弧、局部起火或系统断电。</td></tr>
+<tr><td>H4</td><td>飞控系统异常</td><td>软件缺陷、计算机故障、数据错误。</td><td>错误控制指令、姿态失控或航迹偏离。</td></tr>
+<tr><td>H5</td><td>导航定位异常</td><td>卫星信号遮挡、干扰或传感器漂移。</td><td>定位错误、航线偏离、障碍物碰撞。</td></tr>
+<tr><td>H6</td><td>通信链路中断</td><td>信号遮挡、设备故障或外部干扰。</td><td>状态信息丢失、地面监控受限、应急处置延迟。</td></tr>
+<tr><td>H7</td><td>分合机构未锁止</td><td>定位偏差、机械磨损、锁止传感器失效。</td><td>运输过程中飞行体松动，或起飞前连接不可靠。</td></tr>
+<tr><td>H8</td><td>旋翼伤人</td><td>人员误入、旋翼意外启动或警示不足。</td><td>割伤、撞击和异物飞散伤害。</td></tr>
+<tr><td>H9</td><td>复合材料结构损伤</td><td>冲击、疲劳、分层、制造缺陷。</td><td>机臂或桨叶强度下降，严重时结构破坏。</td></tr>
+<tr><td>H10</td><td>恶劣天气</td><td>阵风、降雨、低能见度、高温或低温。</td><td>控制能力下降、能耗增加、着陆困难。</td></tr>
+<tr><td>H11</td><td>驾驶员误操作</td><td>模式不清、告警理解错误、训练不足。</td><td>错误起飞、操作不当、接管延误。</td></tr>
+<tr><td>H12</td><td>维修和软件构型错误</td><td>错装部件、漏检、错误更新或校准不当。</td><td>隐蔽故障、性能异常和飞行风险增加。</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="fmea">
+<h2>五、故障模式与影响分析（FMEA）</h2>
+<p>FMEA从部件或功能出发，分析可能发生的故障、故障原因、局部影响和系统后果。下表选取与飞行安全关系较大的故障模式进行分析。</p>
+<div class="tablewrap"><table>
+<thead><tr><th>部件 / 功能</th><th>故障模式</th><th>原因</th><th>系统影响</th><th>检测方法</th><th>改进措施</th></tr></thead>
+<tbody>
+<tr><td>电机 / 电调</td><td>停止输出或输出不足</td><td>绕组过热、控制器故障、连接器松脱。</td><td>推力不平衡，飞行姿态受到影响。</td><td>电流、电压、温度和转速监测。</td><td>故障隔离、推进冗余、过温保护和故障后着陆验证。</td></tr>
+<tr><td>旋翼</td><td>裂纹、变形或损坏</td><td>疲劳、异物撞击、制造缺陷。</td><td>振动增加、推力下降，可能造成结构破坏。</td><td>振动监测、目视检查和无损检测。</td><td>材料检验、寿命管理、定期更换和飞前检查。</td></tr>
+<tr><td>电池包</td><td>温度异常或热失控</td><td>内部短路、过充、碰撞和散热故障。</td><td>起火、烟雾、供电中断。</td><td>温度、电压、电流和绝缘监测。</td><td>电池分区、热蔓延隔离、异常断电和排气导流。</td></tr>
+<tr><td>高压配电</td><td>绝缘下降或短路</td><td>线束磨损、进水、连接松动。</td><td>电弧、触电、局部起火或动力丧失。</td><td>绝缘监测、故障电流检测。</td><td>线束防护、连接器锁止、高压互锁和快速隔离。</td></tr>
+<tr><td>飞控计算机</td><td>输出错误控制量</td><td>软件错误、硬件故障、数据异常。</td><td>姿态控制异常，可能导致失控。</td><td>多通道交叉比较、状态监控和故障告警。</td><td>异构冗余、软件验证、故障注入和安全降级。</td></tr>
+<tr><td>导航设备</td><td>位置数据错误</td><td>卫星干扰、遮挡、传感器漂移。</td><td>航迹偏离，避障和降落精度下降。</td><td>多源定位一致性检查。</td><td>惯导与卫星导航组合、完整性监控和失效策略。</td></tr>
+<tr><td>通信设备</td><td>链路中断</td><td>天线故障、遮挡、干扰。</td><td>远程状态监控或信息交互受限。</td><td>链路质量监控和超时告警。</td><td>失链程序、备用链路和通信覆盖评估。</td></tr>
+<tr><td>分合机构</td><td>未完全锁止</td><td>异物、磨损、定位误差、传感器失效。</td><td>飞行体固定不牢或连接状态异常。</td><td>锁止位置传感器、机械状态检查。</td><td>机械锁止与独立检测结合，未确认锁止时禁止进入下一状态。</td></tr>
+<tr><td>复合材料机臂</td><td>分层或疲劳裂纹</td><td>冲击、循环载荷、工艺缺陷。</td><td>结构刚度和强度下降。</td><td>无损检测、外观和振动检查。</td><td>损伤容限设计、制造追溯和检查周期管理。</td></tr>
+<tr><td>人机界面</td><td>模式识别错误</td><td>提示不清、界面布局不合理、人员训练不足。</td><td>操作错误、接管延迟。</td><td>操作记录、模拟器和人因试验。</td><td>模式清晰显示、分级告警、训练和操作确认。</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="matrix">
+<h2>六、风险矩阵评价</h2>
+<p>风险等级由严重度S和发生可能性L相乘得到：R=S×L。严重度分为1至5级，发生可能性也分为1至5级。分值越高，越需要优先采取措施。</p>
+<div class="tablewrap"><table>
+<thead><tr><th>等级</th><th>严重度说明</th><th>发生可能性说明</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>影响很小，无人员伤害。</td><td>极少发生。</td></tr>
+<tr><td>2</td><td>轻微损坏或轻微人员伤害。</td><td>较少发生。</td></tr>
+<tr><td>3</td><td>需要维修或可能造成较明显人员伤害。</td><td>偶尔发生。</td></tr>
+<tr><td>4</td><td>严重伤害或飞行任务中断。</td><td>有一定可能发生。</td></tr>
+<tr><td>5</td><td>可能导致航空器损毁或人员死亡。</td><td>在运行中较容易出现。</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>S \ L</th><th>1 极少</th><th>2 较少</th><th>3 偶尔</th><th>4 可能</th><th>5 较频繁</th></tr></thead>
+<tbody>
+<tr><th>5 灾难性</th><td style="background:#fff4e5">5</td><td style="background:#fbecec">10</td><td style="background:#fbecec">15</td><td style="background:#f5dada">20</td><td style="background:#f5dada">25</td></tr>
+<tr><th>4 严重</th><td style="background:#eaf5ef">4</td><td style="background:#fff4e5">8</td><td style="background:#fbecec">12</td><td style="background:#fbecec">16</td><td style="background:#f5dada">20</td></tr>
+<tr><th>3 中等</th><td style="background:#eaf5ef">3</td><td style="background:#eaf5ef">6</td><td style="background:#fff4e5">9</td><td style="background:#fff4e5">12</td><td style="background:#fbecec">15</td></tr>
+<tr><th>2 轻微</th><td style="background:#eaf5ef">2</td><td style="background:#eaf5ef">4</td><td style="background:#eaf5ef">6</td><td style="background:#fff4e5">8</td><td style="background:#fff4e5">10</td></tr>
+<tr><th>1 可忽略</th><td style="background:#eaf5ef">1</td><td style="background:#eaf5ef">2</td><td style="background:#eaf5ef">3</td><td style="background:#eaf5ef">4</td><td style="background:#fff4e5">5</td></tr>
+</tbody></table></div>
+<p class="small">绿色：低风险；黄色：中风险；浅红色：高风险。评分为本次作业的定性判断，不代表实际故障统计概率。</p>
+<div class="tablewrap"><table>
+<thead><tr><th>危险场景</th><th>S</th><th>L</th><th>初始风险R</th><th>等级</th><th>主要控制措施</th><th>控制后目标</th></tr></thead>
+<tbody>
+<tr><td>推进单元故障导致推力不足</td><td>5</td><td>3</td><td>15</td><td>高</td><td>推进冗余、独立供电、故障隔离和剩余推力验证。</td><td>5×1=5</td></tr>
+<tr><td>电池热失控</td><td>5</td><td>2</td><td>10</td><td>高</td><td>热监控、分区隔离、热蔓延试验和应急程序。</td><td>5×1=5</td></tr>
+<tr><td>飞控系统共因故障</td><td>5</td><td>2</td><td>10</td><td>高</td><td>异构冗余、软件验证、故障注入和独立性分析。</td><td>5×1=5</td></tr>
+<tr><td>导航定位错误</td><td>4</td><td>3</td><td>12</td><td>高</td><td>多源定位、完整性监控和定位异常处置。</td><td>4×2=8</td></tr>
+<tr><td>自动分合机构未锁止</td><td>4</td><td>3</td><td>12</td><td>高</td><td>机械锁止、双重状态确认和未锁止禁止起飞。</td><td>4×1=4</td></tr>
+<tr><td>高压绝缘故障</td><td>4</td><td>3</td><td>12</td><td>高</td><td>绝缘监测、快速断电和高压维修防护。</td><td>4×1=4</td></tr>
+<tr><td>旋翼伤人</td><td>3</td><td>3</td><td>9</td><td>中</td><td>人员隔离区、启动联锁和旋翼停止确认。</td><td>3×1=3</td></tr>
+<tr><td>复合材料结构损伤</td><td>5</td><td>2</td><td>10</td><td>高</td><td>疲劳试验、损伤容限设计和无损检测。</td><td>5×1=5</td></tr>
+<tr><td>通信中断</td><td>4</td><td>3</td><td>12</td><td>高</td><td>失链程序、备用链路和链路状态监控。</td><td>4×2=8</td></tr>
+<tr><td>驾驶员模式误操作</td><td>4</td><td>3</td><td>12</td><td>高</td><td>模式提示、告警分级和模拟训练。</td><td>4×2=8</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="fta">
+<h2>七、故障树分析</h2>
+<p>选取“飞行器无法保持安全飞行或无法安全着陆”作为顶层事件。可能导致该事件的原因主要来自推进系统、飞控系统、导航通信系统以及结构和人员操作等方面。</p>
+<div class="diagram">
+<svg viewBox="0 0 900 390" role="img" aria-label="飞行器无法安全飞行故障树">
+<rect x="270" y="10" width="360" height="50" rx="9" fill="#fbecec" stroke="#b95b5b" stroke-width="2"/>
+<text x="450" y="41" text-anchor="middle" font-size="17" fill="#743535" font-weight="bold">顶层事件：无法安全飞行 / 着陆</text>
+<path d="M450 60 V91 M105 91 H795 M105 91 V117 M335 91 V117 M565 91 V117 M795 91 V117" stroke="#64748b" stroke-width="2" fill="none"/>
+<g>
+<rect x="10" y="117" width="190" height="68" rx="8" fill="#eaf1f7" stroke="#527da4"/>
+<text x="105" y="144" text-anchor="middle" font-size="15" fill="#183b63" font-weight="bold">推进能力丧失</text><text x="105" y="166" text-anchor="middle" font-size="12" fill="#41576e">电机 / 电调 / 电源故障</text>
+<rect x="240" y="117" width="190" height="68" rx="8" fill="#eaf1f7" stroke="#527da4"/>
+<text x="335" y="144" text-anchor="middle" font-size="15" fill="#183b63" font-weight="bold">飞控能力丧失</text><text x="335" y="166" text-anchor="middle" font-size="12" fill="#41576e">软件 / 传感器 / 供电共因</text>
+<rect x="470" y="117" width="190" height="68" rx="8" fill="#eaf1f7" stroke="#527da4"/>
+<text x="565" y="144" text-anchor="middle" font-size="15" fill="#183b63" font-weight="bold">导航通信异常</text><text x="565" y="166" text-anchor="middle" font-size="12" fill="#41576e">定位漂移 / 干扰 / 失链</text>
+<rect x="700" y="117" width="190" height="68" rx="8" fill="#eaf1f7" stroke="#527da4"/>
+<text x="795" y="144" text-anchor="middle" font-size="15" fill="#183b63" font-weight="bold">结构与人为因素</text><text x="795" y="166" text-anchor="middle" font-size="12" fill="#41576e">结构损伤 / 操作失误</text>
+</g>
+<path d="M105 185 V213 M335 185 V213 M565 185 V213 M795 185 V213" stroke="#64748b" stroke-width="1.5"/>
+<g fill="#40566d" font-size="12">
+<rect x="10" y="213" width="190" height="90" rx="7" fill="#fbfcfe" stroke="#d8e1ea"/>
+<text x="105" y="239" text-anchor="middle">• 多个推进单元失效</text><text x="105" y="263" text-anchor="middle">• 电池 / 高压配电故障</text><text x="105" y="287" text-anchor="middle">• 桨叶损伤</text>
+<rect x="240" y="213" width="190" height="90" rx="7" fill="#fbfcfe" stroke="#d8e1ea"/>
+<text x="335" y="239" text-anchor="middle">• 控制软件错误</text><text x="335" y="263" text-anchor="middle">• 传感器共同原因故障</text><text x="335" y="287" text-anchor="middle">• 备份切换失败</text>
+<rect x="470" y="213" width="190" height="90" rx="7" fill="#fbfcfe" stroke="#d8e1ea"/>
+<text x="565" y="239" text-anchor="middle">• GNSS干扰 / 欺骗</text><text x="565" y="263" text-anchor="middle">• 通信中断</text><text x="565" y="287" text-anchor="middle">• 感知设备误检</text>
+<rect x="700" y="213" width="190" height="90" rx="7" fill="#fbfcfe" stroke="#d8e1ea"/>
+<text x="795" y="239" text-anchor="middle">• 复合材料分层</text><text x="795" y="263" text-anchor="middle">• 恶劣天气</text><text x="795" y="287" text-anchor="middle">• 模式混淆 / 接管延误</text>
+</g>
+<rect x="70" y="333" width="760" height="43" rx="8" fill="#eaf5ef" stroke="#4b9771"/>
+<text x="450" y="360" text-anchor="middle" font-size="14" fill="#245e43">防护措施：故障检测 · 故障隔离 · 独立冗余 · 安全降级 · 应急着陆 · 维修检查</text>
+</svg>
+</div>
+<p>故障树中各分支并非完全独立。例如电池故障可能同时影响多个电机和飞控设备的供电，软件错误也可能同时影响多个冗余通道。因此，分析时需要特别检查共因故障，不能只统计单个部件的独立失效。</p>
+</section>
+
+<section id="controls">
+<h2>八、安全措施与改进建议</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>系统</th><th>设计与管理措施</th><th>建议验证方式</th></tr></thead>
+<tbody>
+<tr><td>电池与高压系统</td><td>设置电池状态监测、热管理、故障隔离和高压互锁；对电池包进行分区设计，避免单个故障扩展为整包事故。</td><td>过充、过放、短路、热失控、热蔓延、绝缘和电磁兼容试验。</td></tr>
+<tr><td>电推进系统</td><td>监测各电机转速、电流和温度；对关键电源和控制线路进行隔离，明确单个推进单元失效后的飞行限制。</td><td>电机耐久、桨叶强度、单点故障注入和故障后飞行试验。</td></tr>
+<tr><td>飞控与导航</td><td>采用独立通道和异构设计，增加传感器数据合理性检查，设置异常状态下的降级控制逻辑。</td><td>软硬件在环试验、传感器故障注入、软件验证和共因故障分析。</td></tr>
+<tr><td>分合机构</td><td>采用机械锁止和独立状态检测；锁止状态不明确时，不允许进入起飞准备状态。</td><td>重复分合寿命试验、振动冲击、异物卡滞、断电和单传感器故障试验。</td></tr>
+<tr><td>结构与旋翼</td><td>建立复合材料损伤检查和使用寿命管理制度，规范旋翼更换和维修记录。</td><td>静力、疲劳、振动、冲击和无损检测。</td></tr>
+<tr><td>通信与数据</td><td>设置通信异常告警、数据完整性检查和失链后的预定处置方式。</td><td>电磁干扰、链路中断、异常数据和网络安全测试。</td></tr>
+<tr><td>座舱与人员</td><td>明确手动与自动模式，区分不同等级告警，建立飞行前检查和应急操作训练。</td><td>模拟器训练、操作可用性测试和异常场景演练。</td></tr>
+<tr><td>起降场与运行</td><td>设置净空要求、人员隔离区、气象限制、消防设备和应急救援流程。</td><td>场地检查、应急演练、运行风险评估和天气限制验证。</td></tr>
+</tbody></table></div>
+<h3>建议优先解决的三个问题</h3>
+<ol>
+<li><b>推进系统故障后的安全能力。</b>需要通过故障注入和飞行试验，验证不同数量、不同位置推进单元失效后，飞行器是否仍能保持姿态并完成安全着陆。</li>
+<li><b>电池热失控的防护。</b>需要验证单体或模组发生热失控后，火焰、高温气体和烟雾是否会影响乘员舱及其他关键设备。</li>
+<li><b>自动分合机构的状态确认。</b>需要确保机械锁止和状态检测可靠，不能只依赖单个传感器判断是否结合完成。</li>
+</ol>
+</section>
+
+<section id="cert">
+<h2>九、适航要求与运行管理</h2>
+<p>载人飞行器进入市场前，需要按照民航规章完成型号合格审定、生产许可审定和单机适航审定。陆行体作为道路车辆，还需要满足汽车产品相关法规和车辆管理要求。两套法规体系分别管理，但产品使用过程中需要协同。</p>
+<div class="tablewrap"><table>
+<thead><tr><th>项目</th><th>主要作用</th><th>与本产品的关系</th></tr></thead>
+<tbody>
+<tr><td>TC 型号合格证</td><td>批准航空器型号设计符合适用适航要求。</td><td>验证飞行体的结构、动力、飞控、软件和系统安全。</td></tr>
+<tr><td>PC 生产许可证</td><td>确认制造商具备按批准设计持续生产的质量体系。</td><td>保证每架飞行体及零部件的生产一致性和可追溯性。</td></tr>
+<tr><td>AC 单机适航证</td><td>确认具体航空器符合批准设计并处于安全可用状态。</td><td>对应每一架交付使用的飞行体。</td></tr>
+<tr><td>CCAR-21</td><td>民用航空产品和零部件合格审定规定。</td><td>为型号、生产和单机适航审定提供基本规章。</td></tr>
+<tr><td>AC-21-AA-2024-20</td><td>电推进系统专用条件编制指南。</td><td>涉及电动发动机、电气系统、控制、失效安全和相关验证。</td></tr>
+<tr><td>T/CCAATB 0062—2024</td><td>电动垂直起降航空器起降场技术要求。</td><td>涉及起降场址、障碍物、设施设备、消防和救援器材。</td></tr>
+</tbody></table></div>
+<h3>产品审定进展</h3>
+<p>小鹏汇天于2024年3月公布，X3-F型号合格证申请获民航中南地区管理局受理；2025年5月公布，生产许可证申请也获受理。受理意味着审定工作进入相应程序，并不等同于已经颁发证书。飞行体要实现批量交付，还需要完成型号设计符合性验证、生产质量体系审查和单机适航审查。</p>
+<p>从行业情况看，亿航EH216-S已先后取得TC、标准适航证和PC，说明载人eVTOL的适航审定已经有实际案例。小鹏汇天需要结合自身有人驾驶、分体式结构和电推进构型，完成相应的安全验证。</p>
+</section>
+
+<section id="conclusion">
+<h2>十、结论</h2>
+<p>通过对「陆地航母」的系统安全分析可以看出，产品的安全问题不仅存在于飞行过程中，还包括道路运输、补能、分离结合、人员接近旋翼、维修和软件更新等环节。飞行体的推进系统、电池、高压配电、飞控和导航是影响飞行安全的关键部分；自动分合机构则是分体式产品特有的重要安全接口。</p>
+<p>在危险识别和FMEA分析中，推进能力丧失、电池热失控、飞控共因故障、定位异常和分合机构未锁止属于需要重点关注的风险。相应的控制措施包括动力冗余、故障隔离、电池热防护、独立状态检测、软件验证、故障注入和飞行试验。</p>
+<p>我认为，飞行汽车的安全不能只依靠增加设备冗余，还需要证明各个冗余通道具有独立性，并且在异常情况下能够及时发现故障、限制故障扩散和进入安全状态。对于「陆地航母」来说，只有飞行体本身、陆行体和自动分合接口都经过充分验证，产品才能具备稳定运行的基础。</p>
+</section>
+
+<section id="refs">
+<h2>参考资料</h2>
+<div class="refs">
+<div class="ref"><b>[1] 小鹏汽车：小鹏汇天「陆地航母」飞行汽车实车首次亮相广州，飞行首秀演绎未来应用场景（2024-09-04）</b><a href="https://www.xiaopeng.com/news/company_news/5361.html" target="_blank">https://www.xiaopeng.com/news/company_news/5361.html</a></div>
+<div class="ref"><b>[2] 小鹏汽车：X3-F型号合格证（TC）申请获局方受理（2024-03-25）</b><a href="https://www.xiaopeng.com/news/company_news/5271.html" target="_blank">https://www.xiaopeng.com/news/company_news/5271.html</a></div>
+<div class="ref"><b>[3] 小鹏汽车：X3-F生产许可证（PC）申请获局方受理（2025-05-12）</b><a href="https://www.xiaopeng.com/news/company_news/5466.html" target="_blank">https://www.xiaopeng.com/news/company_news/5466.html</a></div>
+<div class="ref"><b>[4] 中国民用航空局：《电推进系统专用条件编制指南》，AC-21-AA-2024-20（2024-08-13）</b><a href="https://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202408/t20240819_225096.html" target="_blank">https://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202408/t20240819_225096.html</a></div>
+<div class="ref"><b>[5] 中国民用机场协会：T/CCAATB 0062—2024《电动垂直起降航空器（eVTOL）起降场技术要求》</b><a href="https://www.chinaairports.org.cn/uploads/file/20240604/1717479725377314.pdf" target="_blank">标准文件</a></div>
+<div class="ref"><b>[6] 亿航智能：EH216-S适航审定历程</b><a href="https://www.ehang.com/cn/ehang216s/airworthiness/" target="_blank">https://www.ehang.com/cn/ehang216s/airworthiness/</a></div>
+<div class="ref"><b>[7] 中国民用航空局中南地区管理局：中南局颁发全国首张载人无人机的生产许可证（2024-04-16）</b><a href="https://www.caac.gov.cn/PHONE/GLJ_PHONE/ZNGLJ/ZN_XWZX/202404/t20240416_223537.html" target="_blank">https://www.caac.gov.cn/PHONE/GLJ_PHONE/ZNGLJ/ZN_XWZX/202404/t20240416_223537.html</a></div>
+</div>
+</section>
+</main><footer>飞行汽车技术基础课程作业　｜　小鹏汇天「陆地航母」X3-F</footer>
+</body></html>
