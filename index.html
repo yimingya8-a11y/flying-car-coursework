@@ -1,0 +1,58 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>飞行汽车课程作业</title><style>
+:root{--navy:#183b63;--blue:#285f91;--light:#eef4fa;--line:#d8e1ea;--text:#243447;--muted:#64748b;--paper:#fff;--soft:#f7f9fc;--green:#eaf5ef;--orange:#fff4e5;--red:#fbecec}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:#f2f5f8;color:var(--text);font:16px/1.8 "Microsoft YaHei","PingFang SC",Arial,sans-serif}
+a{color:#145b9a;text-decoration:none}a:hover{text-decoration:underline}
+header{background:var(--navy);color:#fff}
+.head{max-width:1180px;margin:auto;padding:34px 26px 30px}
+.kicker{font-size:13px;letter-spacing:.12em;color:#c6d9ec}
+h1{font-size:34px;line-height:1.35;margin:12px 0 10px;font-weight:750}
+.subtitle{color:#d9e6f2;margin:0;max-width:850px}
+.meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:22px;font-size:13px;color:#dce8f4}
+.meta span{border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:4px}
+nav{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.navinner{max-width:1180px;margin:auto;padding:9px 26px;display:flex;gap:7px;flex-wrap:wrap}
+nav a{font-size:13px;padding:5px 10px;border-radius:5px;color:#38536d}
+nav a:hover{background:var(--light);text-decoration:none}
+main{max-width:1180px;margin:26px auto 70px;padding:0 26px}
+section{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:25px 28px;margin:18px 0;box-shadow:0 3px 12px rgba(26,54,83,.035)}
+h2{font-size:23px;color:var(--navy);margin:0 0 16px;padding-bottom:10px;border-bottom:2px solid #dce7f1}
+h3{font-size:17px;color:#244d74;margin:17px 0 8px}
+p{margin:8px 0 12px}
+.lead{font-size:17px;color:#40566d}
+.small{font-size:13px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:15px 0}
+.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.card{border:1px solid var(--line);border-radius:8px;padding:15px 17px;background:var(--soft)}
+.card h3{margin:0 0 7px}
+.metric{font-size:26px;color:var(--navy);font-weight:800;line-height:1.25}
+.metric-label{font-size:12px;color:var(--muted);margin-top:4px}
+ul,ol{padding-left:23px;margin:8px 0 12px}
+li{margin:5px 0}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0}
+th,td{border:1px solid var(--line);padding:10px 11px;vertical-align:top;text-align:left}
+th{background:#eaf1f7;color:#244766;font-weight:700}
+tr:nth-child(even) td{background:#fbfcfe}
+.tablewrap{overflow-x:auto}
+.note{padding:13px 16px;border-left:4px solid #5d88b1;background:#f0f5fa;border-radius:0 7px 7px 0;margin:13px 0;color:#41576e;font-size:14px}
+.warn{border-left-color:#d59a37;background:var(--orange)}
+.good{border-left-color:#4b9771;background:var(--green)}
+.bad{border-left-color:#c75a5a;background:var(--red)}
+.diagram{border:1px solid var(--line);background:#fbfcfe;border-radius:8px;padding:16px;margin:13px 0;overflow:auto}
+.diagram svg{display:block;max-width:100%;height:auto;margin:auto}
+.pill{display:inline-block;background:#eaf1f7;color:#315779;padding:2px 8px;border-radius:4px;font-size:12px;margin:2px}
+.refs{display:grid;gap:10px}
+.ref{border-bottom:1px solid var(--line);padding:9px 0}
+.ref:last-child{border:0}
+.ref b{display:block;color:#2b4661;font-size:14px}
+.ref a{font-size:13px;word-break:break-all}
+footer{max-width:1180px;margin:0 auto 35px;padding:18px 26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line)}
+@media(max-width:760px){.head{padding:25px 18px}h1{font-size:27px}.navinner{padding:8px 14px}main{padding:0 12px;margin-top:14px}section{padding:19px 16px}.grid,.grid.two{grid-template-columns:1fr}}
+@media print{body{background:#fff}nav{display:none}main{margin:0 auto;padding:0}section{box-shadow:none;break-inside:avoid}header{background:#fff;color:#111;border-bottom:2px solid #183b63}.kicker,.subtitle,.meta{color:#333}a{color:#111;text-decoration:underline}footer{margin-bottom:0}}
+
+body{background:#f2f5f8}.landing{max-width:960px;margin:70px auto;padding:0 22px}.entry{background:#fff;border:1px solid var(--line);border-radius:12px;padding:25px;margin:18px 0;display:flex;justify-content:space-between;align-items:center;gap:20px}.entry h2{border:0;margin:0;padding:0}.entry p{color:var(--muted);margin:5px 0 0}.entry a{background:var(--navy);color:#fff;padding:10px 16px;border-radius:6px;white-space:nowrap}@media(max-width:600px){.entry{display:block}.entry a{display:inline-block;margin-top:15px}}</style></head><body>
+<header><div class="head"><div class="kicker">飞行汽车技术基础 · 课程作业</div><h1>小鹏汇天「陆地航母」<br>调研与安全分析</h1><p class="subtitle">两次课程作业，研究对象统一为陆地航母飞行汽车。</p><div class="meta"><span>研究对象：小鹏汇天「陆地航母」</span><span>型号：X3-F</span><span>2026年11月</span></div></div></header>
+<div class="landing">
+<div class="entry"><div><h2>第一次作业｜全方位调研与分析</h2><p>企业背景、产品结构、关键技术、技术可行性、应用场景、市场和竞品分析。</p></div><a href="./作业一/index.html">进入作业一</a></div>
+<div class="entry"><div><h2>第二次作业｜全方位安全分析</h2><p>系统组成、运行流程、危险源识别、FMEA、风险矩阵、故障树和安全措施。</p></div><a href="./作业二/index.html">进入作业二</a></div>
+</div><footer>飞行汽车技术基础课程作业</footer></body></html>
